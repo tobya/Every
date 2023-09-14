@@ -6,7 +6,10 @@
     "autoload": {
         "psr-4": {
             "Tobya\\Every\\": "src/"
-        }
+        },
+       "files": [
+            "src/helpers.php"
+        ]
     },
     "authors": [
         {
