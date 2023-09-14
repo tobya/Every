@@ -1,6 +1,6 @@
 {
     "name": "tobya/every",
-    "description": "Execture a closure every count times the function is called",
+    "description": "Execute a closure every count times the function is called",
     "type": "library",
     "license": "MIT",
     "autoload": {
@@ -11,7 +11,7 @@
     "authors": [
         {
             "name": "Toby Allen",
-            "email": "toby@cookingisfun.ie"
+            "email": "toby@toflidium.com"
         }
     ],
     "require": {}
