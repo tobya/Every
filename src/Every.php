@@ -42,6 +42,12 @@ class Every {
 
     }
 
+  /**
+   * Short cut to simply echo out a string on every x iterations
+   * @param $count
+   * @param $string
+   * @return void
+   */
     public static function Echo($count, $string){
       Static::Every($count, function () use($string){
         echo $string;
