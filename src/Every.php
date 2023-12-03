@@ -18,6 +18,7 @@ class Every {
     }
 
   /**
+   * Callable gets called after every $count calls to the function.
    * @param $count
    * @param $callable
    * @return void
