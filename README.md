@@ -17,7 +17,7 @@ use in a loop to execute every x times
     if (DoACheck()){
       DoSomethign();
     }
-    \Tobya\Every\Every(20, function(){
+    \Tobya\Every\Every::Every(20, function(){
         echo 'checked 20';
       });
   }
