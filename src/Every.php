@@ -42,5 +42,11 @@ class Every {
 
     }
 
+    public static function Echo($count, $string){
+      Static::Every($count, function () use($string){
+        echo $string;
+      });
+    }
+
 
 }
