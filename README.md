@@ -22,3 +22,16 @@ use in a loop to execute every x times
       });
   }
 ````
+
+if you just want to echo you can simply use the echo function
+
+
+````
+ foreach( $BigList as $item){
+    if (DoACheck()){
+      DoSomethign();
+    }
+    \Tobya\Every\Every::Echo(20, 'checked 20');
+      
+  }
+````
