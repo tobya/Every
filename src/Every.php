@@ -6,7 +6,7 @@ class Every {
 
   protected static self $cache;
 
-  protected $count;
+  protected $counts ;
 
   /**
    * retrieve a single static instance of this class.
@@ -18,15 +18,18 @@ class Every {
     }
 
   /**
-   * Callable gets called after every $count calls to the function.
    * @param $count
    * @param $callable
    * @return void
    */
-    public static function Every(mixed $count , callable $callable){
+    public static function Every(mixed $count , callable $callable, $tag = 'default'){
 
           $instance = Self::getInstance();
-          $instance->count = $instance->count +1;
+          if (isset($instance->count[$tag])){
+            $instance->count[$tag] = $instance->count[$tag] +1;
+          } else {
+            $instance->count[$tag] = 1;
+          }
 
           if (is_callable($count)){
             $spincount = $count();
@@ -34,8 +37,8 @@ class Every {
             $spincount = $count;
           }
 
-          if ($instance->count >= $spincount){
-            $instance->count = 0;
+          if ($instance->count[$tag] >= $spincount){
+            $instance->count[$tag] = 0;
             $callable();
           }
 
@@ -43,16 +46,10 @@ class Every {
 
     }
 
-  /**
-   * Short cut to simply echo out a string on every x iterations
-   * @param $count
-   * @param $string
-   * @return void
-   */
-    public static function Echo($count, $string){
+    public static function Echo($count, $string, $tag = 'default'){
       Static::Every($count, function () use($string){
         echo $string;
-      });
+      },$tag);
     }
 
 
