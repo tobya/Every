@@ -35,3 +35,18 @@ if you just want to echo you can simply use the echo function
       
   }
 ````
+
+if you wish to use multiple Every calls in a request you can give each one a tag so that they do not get mixed up.
+
+
+````
+ foreach( $BigList as $item){
+    if (DoACheck()){
+      DoSomethign();
+    }
+    \Tobya\Every\Every::Every(20, function(){
+                          echo 'checked 20';
+                       },
+                       'BiglistCheck');
+  }
+````
